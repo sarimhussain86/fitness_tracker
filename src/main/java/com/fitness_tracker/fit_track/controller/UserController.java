@@ -25,15 +25,7 @@ public class UserController {
 
     @GetMapping
     public List<User> findAll() {
-        // System.out.println("hello");
+        System.out.println("hello");
         return repository.findAll();
-    }
-    
-    @PostMapping
-    public User create(@RequestBody User user) {
-        System.out.println("user: " + user);
-        PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
-        return repository.save(user);
     }
 }
